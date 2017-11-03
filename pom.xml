@@ -67,20 +67,19 @@
         <version>2.6.1</version>
         <executions>
           <execution>
+            <phase>prepare-package</phase>
             <goals>
               <goal>compile</goal>
-              <goal>test</goal>
-              <goal>i18n</goal>
-              <goal>generateAsync</goal>
             </goals>
           </execution>
         </executions>
         <!-- Plugin configuration. There are many available options, see 
           gwt-maven-plugin documentation at codehaus.org -->
         <configuration>
+          <gwtSdkFirstInClasspath>true</gwtSdkFirstInClasspath>
+          <logLevel>INFO</logLevel>
           <runTarget>startpoint.html</runTarget>
           <hostedWebapp>${webappDirectory}</hostedWebapp>
-          <i18nMessagesBundle>shu.client.Messages</i18nMessagesBundle>
         </configuration>
       </plugin>
 
@@ -92,12 +91,12 @@
         <executions>
           <execution>
             <phase>compile</phase>
-            <goals>
-              <goal>exploded</goal>
-            </goals>
           </execution>
         </executions>
         <configuration>
+         <!-- <outputDirectory>webapps</outputDirectory>
+         -->
+          <warName>ShuComp</warName>
           <webappDirectory>${webappDirectory}</webappDirectory>
         </configuration>
       </plugin>
@@ -106,8 +105,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>2.3.2</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
     </plugins>

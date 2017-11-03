@@ -34,15 +34,15 @@ public class startpoint implements EntryPoint {
    */
   private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
 
-  private final Messages messages = GWT.create(Messages.class);
+//  private final Messages messages = GWT.create(Messages.class);
 
   /**
    * This is the entry point method.
    */
   public void onModuleLoad() {
-    final Button sendButton = new Button( messages.sendButton() );
+    final Button sendButton = new Button( "messages.sendButton()" );
     final TextBox nameField = new TextBox();
-    nameField.setText( messages.nameField() );
+    nameField.setText( "messages.nameField()" );
     final Label errorLabel = new Label();
 
     // We can add style names to widgets
