@@ -1,4 +1,4 @@
-<project name="barsgl" basedir="." default="build-war-deploy">
+<project name="ShuComp" basedir="." default="build-war-deploy">
 
 
     <property file="build.properties" />
